@@ -1,0 +1,21 @@
+<!-- templates/article_detail.html -->
+{% extends 'base.html' %}
+{% load humanize %}
+{% block content %}
+    <div class="article-entry">
+        <h2>{{ object.title }}</h2>
+        <p>by {{ object.author }} | {{ object.date|naturaltime }}</p>
+        <p>{{ object.body }}</p>
+    </div>
+    <p>
+        <a href="{% url 'article_edit' article.pk %}">
+            <button class="btn btn-info ml-2" type="submit">Edit</button>
+        </a>
+        <a href="{% url 'article_delete' article.pk %}">
+            <button class="btn btn-danger ml-2" type="submit">Delete</button>
+        </a>
+    </p>
+    <p>
+        Back to <a href="{% url 'article_list' %}">Articles</a>
+    </p>
+{% endblock content %}

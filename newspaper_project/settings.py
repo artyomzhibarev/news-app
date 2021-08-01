@@ -34,15 +34,19 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
+    'articles.apps.ArticlesConfig',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms',
+    'django.contrib.humanize',
 
 ]
+
+TIME_ZONE = 'Europe/Moscow'
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
